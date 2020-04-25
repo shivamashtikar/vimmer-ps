@@ -40,31 +40,31 @@ your `.vimrc`.
 ===============================================================================
 COMMANDS                                                   *vimmer-ps-commands*
 
-              *vimmer-ps-apply*
+              *vimmer-ps-Pstart*
 >
   :Pstart
 < Start purescript-language-server
-              *vimmer-ps-end*
+              *vimmer-ps-Pend*
 >
   :Pend
 < Stop purescript-language-server
-              *vimmer-ps-restart*
+              *vimmer-ps-Prestart*
 >
   :Prestart
 < Restart purescript-language-server
-              *vimmer-ps-search*
+              *vimmer-ps-Prsearch*
 >
   :Psearch <function_name>
 < Searches function
-              *vimmer-ps-import*
+              *vimmer-ps-Pimport*
 >
   :Pimport
 < Import function under cursor
-              *vimmer-ps-build*
+              *vimmer-ps-Pbuild*
 >
   :Pbuild
 < Build project
-              *vimmer-ps-apply*
+              *vimmer-ps-Papply*
 >
   :Papply
 < Apply code actions

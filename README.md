@@ -27,7 +27,7 @@ With [pathogen.vim](https://github.com/tpope/vim-pathogen), just clone this repo
 
 ### Requirements
 
-vimmers-ps requires [purescript-language-server][] to be installed \n
+vimmers-ps requires [purescript-language-server][] to be installed <br/>
 you will want to install this either globally or locally for npm, e.g.
 
 ``` bash
@@ -47,8 +47,8 @@ let g:vimmerps_disable_mappings = 0
 ```
 * Set Custom key bindings
 ```vim
-    " Keybindings for IDE like funtions
-    " Note: following are default Keybindings
+    " Keybindings for IDE like functions
+    " Note: following are default key bindings
    autocmd Filetype purescript nm <buffer> <silent> <leader>a :Papply<CR>
    autocmd Filetype purescript nm <buffer> <silent> <leader>i :Pimport<CR>
    autocmd Filetype purescript nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
@@ -64,7 +64,7 @@ let g:vimmerps_disable_mappings = 0
 
 ## Author and Feedback
 
-If you like this plugins, please star them on Github. It's a great way of getting
+If you like this plugin, please star them on Github. It's a great way of getting
 feedback. Same goes for issues reports or feature requests.
 
 
