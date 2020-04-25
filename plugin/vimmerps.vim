@@ -6,19 +6,21 @@ if !exists('g:LanguageClient_serverCommands')
     let g:LanguageClient_serverCommands = {}
 endif
 
-" Configure LanguageClient to use purescript-language-server if it is installed and available in path.
-if executable("purescript-language-server") || executable("npx")
+if !exists('g:vimmerps_config')
     " See https://github.com/nwolverson/vscode-ide-purescript/blob/master/package.json#L80-L246 for list of properties to use
-    let config =
+    let g:vimmerps_config = 
         \ { 'autoStartPscIde': v:true
         \ , 'pscIdePort': v:null
         \ , 'autocompleteAddImport': v:true
         \ , 'pursExe': 'purs'
         \ , 'addNpmPath': v:true
         \ }
+endif
 
+" Configure LanguageClient to use purescript-language-server if it is installed and available in path.
+if executable("purescript-language-server") || executable("npx")
     let configWrapper =
-        \ { 'purescript': config
+        \ { 'purescript': g:vimmerps_config
         \ }
 
     " Define the LanguageServer in the LanguageClient
