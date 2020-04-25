@@ -1,1 +1,74 @@
-vimmer-ps documentation goes here
+*vimmerps.txt*                                     Last Change 2020 April 25
+===============================================================================
+===============================================================================
+A support plugin for LanguageClient_NeoVim which integrates PureScript Language Server
+===============================================================================
+CONTENTS                                                   *vimmer-ps-contents*
+
+  1. Features      |vimmer-ps-features|
+  2. Configuration |vimmer-ps-configuration|
+  3. Commands      |vimmer-ps-commands|
+
+===============================================================================
+FEATURES                                                   *vimmer-ps-features*
+
+Enables following features form LanguageClient_NeoVim
+  * Goto funciton definition
+  * Get type of give function
+  * Search through available functions
+  * Apply suggestions
+  * Suggestions
+
+===============================================================================
+CONFIGURATION                                         *vimmer-ps-configuration*
+Pluging works out of the box
+If you want to use custom Keybindings add the according line to
+your `.vimrc`.
+                                                 *vimmer-ps-disable-keybinding*
+>
+  let g:vimmerps_disable_mappings = 0
+< Disable default key mapping
+                                                  *vimmer-ps-keybinding*
+>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>a :Papply<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>i :Pimport<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>l :Pbuild<CR>
+< Set Custom  Keybindings for IDE like funtions. Note: above are default Keybindings
+
+===============================================================================
+COMMANDS                                                   *vimmer-ps-commands*
+
+              *vimmer-ps-Pstart*
+>
+  :Pstart
+< Start purescript-language-server
+              *vimmer-ps-Pend*
+>
+  :Pend
+< Stop purescript-language-server
+              *vimmer-ps-Prestart*
+>
+  :Prestart
+< Restart purescript-language-server
+              *vimmer-ps-Psearch*
+>
+  :Psearch <function_name>
+< Searches function
+              *vimmer-ps-Pimport*
+>
+  :Pimport
+< Import function under cursor
+              *vimmer-ps-Pbuild*
+>
+  :Pbuild
+< Build project
+              *vimmer-ps-Papply*
+>
+  :Papply
+< Apply code actions
+
+
+
+
