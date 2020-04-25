@@ -1,4 +1,4 @@
-*vimmer-ps.txt*                                     Last Change 2020 April 25
+*vimmerps.txt*                                     Last Change 2020 April 25
 ===============================================================================
 ===============================================================================
 A support plugin for LanguageClient_NeoVim which integrates PureScript Language Server
