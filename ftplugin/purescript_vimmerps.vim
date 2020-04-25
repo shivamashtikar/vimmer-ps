@@ -23,11 +23,11 @@ com! -buffer -nargs=1 Psearch call vimmerps#Psearch(<q-args>)
 
 if !g:vimmerps_disable_mappings
     " Keybindings for IDE like funtions
-    nm <buffer> <silent> <leader>a :Papply<CR>
-    nm <buffer> <silent> <leader>i :Pimport<CR>
-    nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
-    nm <buffer> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
-    nm <buffer> <silent> <leader>l :Pbuild<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>a :Papply<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>i :Pimport<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
+   autocmd Filetype purescript nm <buffer> <silent> <leader>l :Pbuild<CR>
 endif
 
 let b:vimmerps_ftplugin_loaded = v:true
