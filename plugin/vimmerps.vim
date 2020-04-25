@@ -6,6 +6,10 @@ if !exists('g:LanguageClient_serverCommands')
     let g:LanguageClient_serverCommands = {}
 endif
 
+if !exists('g:LanguageClient_rootMarkers')
+    let g:LanguageClient_rootMarkers = {}
+endif
+
 if !exists('g:vimmerps_config')
     " See https://github.com/nwolverson/vscode-ide-purescript/blob/master/package.json#L80-L246 for list of properties to use
     let g:vimmerps_config = 
