@@ -8,6 +8,7 @@ A support plugin for [LanguageClient_NeoVim][] which integrates [pureScript-lang
   - [Requirements](#Requirements)
   - [Dependencies](#Dependencies)
 - [Configuration](#Configuration)
+- [Commands](#Commands)
 
 ## Installation
 
