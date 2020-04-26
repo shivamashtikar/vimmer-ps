@@ -40,10 +40,13 @@ function! vimmerps#PlogCallback(result)
 endfunction
 
 " Functions for the rest of commands
-function! vimmerps#PaddImport(name, module)
+function! vimmerps#PaddImport(...)
+    let l:name = a:0 == 0 ? expand('<cword>') : get(a:, 1)
+    let l:module = a:0 == 2 ? get(a:, 2) : v:null
+
     call LanguageClient_workspace_executeCommand(
-        \ 'purescript.addCompletionImport', [ a:name, a:module, v:null, 'file://' . expand('%:p') ],
-        \ { result -> vimmerps#PaddImportCallback(a:name, result) })
+        \ 'purescript.addCompletionImport', [ l:name, l:module, v:null, 'file://' . expand('%:p') ],
+        \ { result -> vimmerps#PaddImportCallback(l:name, result) })
 endfunction
 
 function! vimmerps#Pstart()

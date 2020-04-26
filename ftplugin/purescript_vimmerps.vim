@@ -14,12 +14,13 @@ setl omnifunc=LanguageClient#complete
 
 " Create the commands
 com! -buffer -nargs=0 Papply call LanguageClient_textDocument_codeAction()
-com! -buffer -nargs=0 Pimport call vimmerps#PaddImport(expand('<cword>'), v:null)
+com! -buffer -nargs=* Pimport call vimmerps#PaddImport(<f-args>)
 com! -buffer -nargs=0 Pbuild call vimmerps#Pbuild()
 com! -buffer -nargs=0 Pstart call vimmerps#Pstart()
 com! -buffer -nargs=0 Pend call vimmerps#Pend()
 com! -buffer -nargs=0 Prestart call vimmerps#Prestart()
 com! -buffer -nargs=1 Psearch call vimmerps#Psearch(<q-args>)
+com! -buffer -nargs=+ Pcommand call vimmerps#PLSCommand(<f-args>)
 
 if !g:vimmerps_disable_mappings
     " Keybindings for IDE like funtions
