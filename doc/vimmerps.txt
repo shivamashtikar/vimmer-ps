@@ -30,11 +30,11 @@ your `.vimrc`.
 < Disable default key mapping
                                                   *vimmer-ps-keybinding*
 >
-   autocmd Filetype purescript nm <buffer> <silent> <leader>a :Papply<CR>
-   autocmd Filetype purescript nm <buffer> <silent> <leader>i :Pimport<CR>
-   autocmd Filetype purescript nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
-   autocmd Filetype purescript nm <buffer> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
-   autocmd Filetype purescript nm <buffer> <silent> <leader>l :Pbuild<CR>
+   autocmd filetype purescript nm <buffer> <silent> <leader>a :Papply<CR>
+   autocmd filetype purescript nm <buffer> <silent> <leader>i :Pimport<CR>
+   autocmd filetype purescript nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
+   autocmd filetype purescript nm <buffer> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
+   autocmd filetype purescript nm <buffer> <silent> <leader>l :Pbuild<CR>
 < Set Custom  Keybindings for IDE like funtions. Note: above are default Keybindings
 
 ===============================================================================
@@ -44,31 +44,40 @@ COMMANDS                                                   *vimmer-ps-commands*
 >
   :Pstart
 < Start purescript-language-server
+
               *vimmer-ps-Pend*
 >
   :Pend
 < Stop purescript-language-server
+
               *vimmer-ps-Prestart*
 >
   :Prestart
 < Restart purescript-language-server
+
               *vimmer-ps-Psearch*
 >
   :Psearch <function_name>
 < Searches function
+
               *vimmer-ps-Pimport*
 >
-  :Pimport
-< Import function under cursor
+  :Pimport [name] [module]
+< Command to manage the imports. If name is not mentioned, it will default to
+the word under the cursor. `module` is an optional parameter.
+
               *vimmer-ps-Pbuild*
 >
   :Pbuild
 < Build project
+
               *vimmer-ps-Papply*
 >
   :Papply
 < Apply code actions
 
-
-
-
+              *vimmer-ps-Pcommand*
+>
+  :Pcommand command arguments-list
+< Executes a command in the language server and displays the results as
+JSON in the Preview window.
