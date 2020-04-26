@@ -43,7 +43,7 @@ This plugin is dependent on following plugins
 ## Configuration
 * Disable default key mapping
 ```vim
-let g:vimmerps_disable_mappings = 0
+let g:vimmerps_disable_mappings = v:true
 ```
 * Set Custom key bindings
 ```vim
