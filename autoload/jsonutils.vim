@@ -3,7 +3,7 @@ if get(g:, 'jsonutils_loaded')
 endif
 
 " Helper function to convert a list to JSON, returns a list
-function! jsonutils#s:ListToJsonLines(...)
+function! jsonutils#ListToJsonLines(...)
     let l:list = get(a:, 1, [])
     let l:level = get(a:, 2, 0)
 
@@ -66,7 +66,7 @@ function! jsonutils#DictToJsonLines(...)
         let l:value = get(l:dict, key, "null")
 
         if (type(l:value) == type({}))
-            let l:valueLines = join(map(range(a:level), { _ -> "  " }), "")
+            let l:valueLines = jsonutils#DictToJsonLines(l:value, l:level + 2)
 
             if (len(l:lines) == 0)
                 call add(l:lines, l:indent . '{ "' . key . '":')
