@@ -70,7 +70,7 @@ function! vimmerps#Psearch(identifier)
 endfunction
 
 function! vimmerps#PLSCommand(command, ...)
-    let l:args = get(a:, 1, [])
+    let l:args = a:000
     call LanguageClient_workspace_executeCommand(a:command, l:args, function("vimmerps#PlogCallback"))
 endfunction
 
