@@ -21,9 +21,8 @@ Enables following features form LanguageClient_NeoVim
 
 ===============================================================================
 CONFIGURATION                                         *vimmer-ps-configuration*
-Pluging works out of the box
-If you want to use custom Keybindings add the according line to
-your `.vimrc`.
+Plugin works out of the box. If you want to use custom Keybindings add the
+according line to your `.vimrc`.
                                                  *vimmer-ps-disable-keybinding*
 >
   let g:vimmerps_disable_mappings = v:true
@@ -35,7 +34,13 @@ your `.vimrc`.
    autocmd filetype purescript nm <buffer> <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
    autocmd filetype purescript nm <buffer> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
    autocmd filetype purescript nm <buffer> <silent> <leader>l :Pbuild<CR>
+
 < Set Custom  Keybindings for IDE like funtions. Note: above are default Keybindings
+
+                                                   *vimmer-ps-config*
+
+Configuration can be overridden. Define an option with name
+`g:vimmerps_config` in your `.vimrc` file.
 
 ===============================================================================
 COMMANDS                                                   *vimmer-ps-commands*

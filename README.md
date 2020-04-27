@@ -69,6 +69,20 @@ autocmd filetype purescript nm <buffer> <silent> <leader>h :call LanguageClient_
 autocmd filetype purescript nm <buffer> <silent> <leader>l :Pbuild<CR>
 ```
 
+You can also change the configuration that is passed to the language server. If not a default configuration is passed. In order to change it, use `g:vimmerps_config` variable and set it to a dictionary.
+
+```vim
+let g:vimmerps_config =
+    \ { 'autoStartPscIde': v:true
+    \ , 'pscIdePort': v:null
+    \ , 'autocompleteAddImport': v:true
+    \ , 'pursExe': 'purs'
+    \ , 'addNpmPath': v:true
+    \ }
+```
+
+You can find the available options [in the VSCode plugin](https://github.com/nwolverson/vscode-ide-purescript/blob/master/package.json). When you do that, omit the `purescript.` prefix. It will be added automatically.
+
 ## Commands
 
 This command registers some buffer commands. Here's a list of them.
