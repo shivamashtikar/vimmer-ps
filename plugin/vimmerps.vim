@@ -11,13 +11,15 @@ if !exists('g:LanguageClient_rootMarkers')
 endif
 
 if !exists('g:vimmerps_config')
-    " See https://github.com/nwolverson/vscode-ide-purescript/blob/master/package.json#L80-L246 for list of properties to use
+    " See https://github.com/nwolverson/vscode-ide-purescript/blob/master/package.json#L80-L252 for list of properties to use
     let g:vimmerps_config =
         \ { 'autoStartPscIde': v:true
         \ , 'pscIdePort': v:null
         \ , 'autocompleteAddImport': v:true
         \ , 'pursExe': 'purs'
         \ , 'addNpmPath': v:true
+        \ , 'addPscPackageSources': v:true
+        \ , 'addSpagoSources': v:true
         \ }
 endif
 
@@ -45,7 +47,9 @@ if executable("purescript-language-server") || executable("npx")
             \ ]
     endif
 
-    let g:LanguageClient_rootMarkers.purescript = [ 'bower.json', 'psc-package.json' ]
+    if !exists('g:LanguageClient_rootMarkers.purescript')
+        let g:LanguageClient_rootMarkers.purescript = [ 'bower.json', 'psc-package.json', 'spago.dhall', 'packages.dhall' ]
+    endif
 endif
 
 let g:vimmerpsPlugin_loaded = v:true
