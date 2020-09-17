@@ -11,6 +11,11 @@ if !exists('g:LanguageClient_rootMarkers')
 endif
 
 if !exists('g:vimmerps_config')
+    let s:usesSpago = !empty(glob('spago.dhall')) ? v:true : v:false
+    let s:usesPscPackage = !empty(glob('psc-package.json')) ? v:true : v:false
+
+    let s:buildCommand = s:usesSpago == v:true ? 'spago build --purs-args --json-errors' : 'pulp build -- --json-errors'
+
     " See https://github.com/nwolverson/vscode-ide-purescript/blob/master/package.json#L80-L252 for list of properties to use
     let g:vimmerps_config =
         \ { 'autoStartPscIde': v:true
@@ -18,8 +23,9 @@ if !exists('g:vimmerps_config')
         \ , 'autocompleteAddImport': v:true
         \ , 'pursExe': 'purs'
         \ , 'addNpmPath': v:true
-        \ , 'addPscPackageSources': v:true
-        \ , 'addSpagoSources': v:true
+        \ , 'addPscPackageSources': s:usesPscPackage
+        \ , 'addSpagoSources': s:usesSpago
+        \ , 'buildCommand': s:buildCommand
         \ }
 endif
 
