@@ -49,6 +49,15 @@ function! vimmerps#PaddImport(...)
         \ { result -> vimmerps#PaddImportCallback(l:name, result) })
 endfunction
 
+function! vimmerps#PaddModuleImport(...)
+    let l:module = get(a:, 1)
+    let l:qualifier = get(a:, 2)
+
+    call LanguageClient_workspace_executeCommand(
+        \ 'purescript.addModuleImport', [ l:module, l:qualifier, 'file://' . expand('%:p') ],
+        \ { result -> vimmerps#PLSCommand(result) })
+endfunction
+
 function! vimmerps#Pstart()
     call LanguageClient_workspace_executeCommand('purescript.startPscIde', [])
 endfunction
