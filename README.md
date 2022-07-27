@@ -16,15 +16,15 @@ Use your favorite plugin manager.
 
 Using [vim-plug](https://github.com/junegunn/vim-plug):
 
-  `Plug 'sriharshachilakapati/vimmer-ps'`
+  `Plug 'shivamashtikar/vimmer-ps'`
 
 Using [vundle](https://github.com/gmarik/Vundle.vim):
 
-  `Plugin 'sriharshachilakapati/vimmer-ps'`
+  `Plugin 'shivamashtikar/vimmer-ps'`
 
 Using [neobundle](https://github.com/Shougo/neobundle.vim):
 
-  `NeoBundle 'sriharshachilakapati/vimmer-ps'`
+  `NeoBundle 'shivamashtikar/vimmer-ps'`
 
 With [pathogen.vim](https://github.com/tpope/vim-pathogen), just clone this repository inside `~/.vim/bundle`:
 
